@@ -21,7 +21,7 @@ export class SceneCreator{
 	}
 
 	createSkyBox(environment){
-		let skybox = this.objectCreator.createSimpleColorCube("#94bcfc", {x: 50, y: 50, z: 40});
+		let skybox = this.objectCreator.createSimpleColorCube("#94bcfc", {x: 50, y: 50, z: 50});
 		environment.scene.add(skybox);
 		environment.objects.push(skybox); 
 	}

@@ -12,8 +12,8 @@ class World {
 	    this.height = window.innerHeight;
 	    this.aspect = this.width/this.height;
 
-	    this.container = document.querySelector('#container');
-	    this.container.innerHTML = '';		
+	    this.container = document.querySelector("#container");
+	    this.container.innerHTML = "";		
 
 		//set camera (viewAngle, aspectRatio, near, far)//
 		this.camera = new THREE.PerspectiveCamera(60, this.aspect, NEAR, FAR);
@@ -29,7 +29,7 @@ class World {
     	this.controls.enableDamping = true;
 
 
-		this.firstPersonControls = new THREE.DeviceOrientationControls(this.camera);
+		this.firstPersonControls = 
 		this.firstPersonControls.enabled = true;
 
 		this.setScene();

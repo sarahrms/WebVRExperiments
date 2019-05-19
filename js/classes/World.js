@@ -28,10 +28,6 @@ class World {
     	this.controls.enabled = true;
     	this.controls.enableDamping = true;
 
-
-		this.firstPersonControls = 
-		this.firstPersonControls.enabled = true;
-
 		this.setScene();
 
 		if (typeof VRFrameData === "undefined") {
@@ -76,8 +72,9 @@ class World {
 		this.objects = [];	
     	let sceneCreator = new SceneCreator();
     	let environment = {
+    		camera: this.camera,
     		scene: this.scene,
-    		objects: this.objects
+    		objects: this.objects,
     	}
     	sceneCreator.createScene(environment);
     	
@@ -135,8 +132,6 @@ class World {
 	      return;
 	    }
 	    this.getPresent();	
-	    this.controls.enabled = false;
-	    this.firstPersonControls.enabled = true;
 	    this.vrButton.textContent = "Disable VR";
 	} 
 
@@ -150,8 +145,6 @@ class World {
 	    }
 
 	    this.vr.display.exitPresent();
-	    this.controls.enabled = true;
-	    this.firstPersonControls.enabled = false;
 	    this.vrButton.textContent = "Enable VR";	    
 	}
 
@@ -164,9 +157,6 @@ class World {
 
 	update(){
 		this.render();
-		if(this.firstPersonControls.enabled){
-			this.firstPersonControls.update();
-		}
 	}
 
 	render(){		
